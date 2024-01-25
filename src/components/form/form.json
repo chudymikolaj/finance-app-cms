@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_form_forms",
+  "info": {
+    "displayName": "Login Form",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "loginInput": {
+      "type": "string",
+      "required": true
+    },
+    "emailInput": {
+      "type": "string",
+      "required": true
+    },
+    "loginButtonName": {
+      "type": "string"
+    },
+    "forgetpasswordLink": {
+      "type": "string"
+    },
+    "createNewAccountLink": {
+      "type": "string"
+    },
+    "createNewAccountTextBeforeLink": {
+      "type": "string"
+    }
+  }
+}
