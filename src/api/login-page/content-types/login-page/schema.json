@@ -41,16 +41,6 @@
         }
       }
     },
-    "loginForm": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "form.form"
-    },
     "lightModeImage": {
       "type": "media",
       "multiple": false,
@@ -75,6 +65,16 @@
       },
       "type": "string",
       "required": true
+    },
+    "loginForm": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "form.form"
     }
   }
 }

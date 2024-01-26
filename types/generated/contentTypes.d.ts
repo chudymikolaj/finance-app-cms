@@ -392,12 +392,6 @@ export interface ApiLoginPageLoginPage extends Schema.SingleType {
           localized: true;
         };
       }>;
-    loginForm: Attribute.Component<'form.form'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     lightModeImage: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -407,6 +401,12 @@ export interface ApiLoginPageLoginPage extends Schema.SingleType {
       }>;
     titlePage: Attribute.String &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    loginForm: Attribute.Component<'form.form'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

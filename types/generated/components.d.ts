@@ -8,8 +8,8 @@ export interface FormForm extends Schema.Component {
     description: '';
   };
   attributes: {
-    loginInput: Attribute.String & Attribute.Required;
     emailInput: Attribute.String & Attribute.Required;
+    passwordInput: Attribute.String & Attribute.Required;
     loginButtonName: Attribute.String;
     forgetpasswordLink: Attribute.String;
     createNewAccountLink: Attribute.String;

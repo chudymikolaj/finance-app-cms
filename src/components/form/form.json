@@ -7,11 +7,11 @@
   },
   "options": {},
   "attributes": {
-    "loginInput": {
+    "emailInput": {
       "type": "string",
       "required": true
     },
-    "emailInput": {
+    "passwordInput": {
       "type": "string",
       "required": true
     },
