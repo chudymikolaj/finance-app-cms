@@ -42,7 +42,8 @@
           "localized": true
         }
       },
-      "component": "form.form"
+      "component": "form.form",
+      "required": true
     }
   }
 }
