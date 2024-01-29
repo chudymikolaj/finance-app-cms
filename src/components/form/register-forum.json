@@ -1,12 +1,16 @@
 {
-  "collectionName": "components_form_forms",
+  "collectionName": "components_form_register_forums",
   "info": {
-    "displayName": "Login Form",
-    "icon": "layout",
+    "displayName": "Register Forum",
+    "icon": "dashboard",
     "description": ""
   },
   "options": {},
   "attributes": {
+    "usernameInput": {
+      "type": "string",
+      "required": true
+    },
     "emailInput": {
       "type": "string",
       "required": true
@@ -15,31 +19,31 @@
       "type": "string",
       "required": true
     },
-    "loginButtonName": {
+    "registerButtonName": {
       "type": "string",
       "required": true
     },
-    "forgetpasswordLink": {
+    "loginAccountLink": {
       "type": "string",
       "required": true
     },
-    "createNewAccountNameLink": {
-      "type": "string",
-      "required": true
-    },
-    "createNewAccountTextBeforeLink": {
-      "type": "string",
-      "required": true
-    },
-    "addLinkToRegister": {
-      "type": "string",
-      "required": true
-    },
-    "addLinkToForgotPassword": {
+    "loginAccountBeforeLink": {
       "type": "string",
       "required": true
     },
     "errorMessage": {
+      "type": "string",
+      "required": true
+    },
+    "loginAccountNameLink": {
+      "type": "string",
+      "required": true
+    },
+    "errorMessage400": {
+      "type": "string",
+      "required": true
+    },
+    "errorMessagePassword": {
       "type": "string",
       "required": true
     }

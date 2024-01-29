@@ -10,10 +10,34 @@ export interface FormForm extends Schema.Component {
   attributes: {
     emailInput: Attribute.String & Attribute.Required;
     passwordInput: Attribute.String & Attribute.Required;
-    loginButtonName: Attribute.String;
-    forgetpasswordLink: Attribute.String;
-    createNewAccountLink: Attribute.String;
-    createNewAccountTextBeforeLink: Attribute.String;
+    loginButtonName: Attribute.String & Attribute.Required;
+    forgetpasswordLink: Attribute.String & Attribute.Required;
+    createNewAccountNameLink: Attribute.String & Attribute.Required;
+    createNewAccountTextBeforeLink: Attribute.String & Attribute.Required;
+    addLinkToRegister: Attribute.String & Attribute.Required;
+    addLinkToForgotPassword: Attribute.String & Attribute.Required;
+    errorMessage: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface FormRegisterForum extends Schema.Component {
+  collectionName: 'components_form_register_forums';
+  info: {
+    displayName: 'Register Forum';
+    icon: 'dashboard';
+    description: '';
+  };
+  attributes: {
+    usernameInput: Attribute.String & Attribute.Required;
+    emailInput: Attribute.String & Attribute.Required;
+    passwordInput: Attribute.String & Attribute.Required;
+    registerButtonName: Attribute.String & Attribute.Required;
+    loginAccountLink: Attribute.String & Attribute.Required;
+    loginAccountBeforeLink: Attribute.String & Attribute.Required;
+    errorMessage: Attribute.String & Attribute.Required;
+    loginAccountNameLink: Attribute.String & Attribute.Required;
+    errorMessage400: Attribute.String & Attribute.Required;
+    errorMessagePassword: Attribute.String & Attribute.Required;
   };
 }
 
@@ -21,6 +45,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'form.form': FormForm;
+      'form.register-forum': FormRegisterForum;
     }
   }
 }
