@@ -41,11 +41,24 @@ export interface FormRegisterForum extends Schema.Component {
   };
 }
 
+export interface LinkLink extends Schema.Component {
+  collectionName: 'components_link_links';
+  info: {
+    displayName: 'Link';
+    icon: 'link';
+  };
+  attributes: {
+    name: Attribute.String;
+    href: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'form.form': FormForm;
       'form.register-forum': FormRegisterForum;
+      'link.link': LinkLink;
     }
   }
 }
