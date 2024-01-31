@@ -927,6 +927,82 @@ export interface ApiMonetaryIncomeMonetaryIncome extends Schema.CollectionType {
   };
 }
 
+export interface ApiNavbarPrivateNavbarPrivate extends Schema.SingleType {
+  collectionName: 'navbar_privates';
+  info: {
+    singularName: 'navbar-private';
+    pluralName: 'navbar-privates';
+    displayName: 'Navbar Private';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Navbar: Attribute.DynamicZone<['link.link']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar-private.navbar-private',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar-private.navbar-private',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::navbar-private.navbar-private',
+      'oneToMany',
+      'api::navbar-private.navbar-private'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiNavbarPublicNavbarPublic extends Schema.SingleType {
+  collectionName: 'navbar_publics';
+  info: {
+    singularName: 'navbar-public';
+    pluralName: 'navbar-publics';
+    displayName: 'Navbar Public';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Navbar: Attribute.DynamicZone<['link.link']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar-public.navbar-public',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar-public.navbar-public',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRegisterPageRegisterPage extends Schema.SingleType {
   collectionName: 'register_pages';
   info: {
@@ -1010,6 +1086,8 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::login-page.login-page': ApiLoginPageLoginPage;
       'api::monetary-income.monetary-income': ApiMonetaryIncomeMonetaryIncome;
+      'api::navbar-private.navbar-private': ApiNavbarPrivateNavbarPrivate;
+      'api::navbar-public.navbar-public': ApiNavbarPublicNavbarPublic;
       'api::register-page.register-page': ApiRegisterPageRegisterPage;
     }
   }

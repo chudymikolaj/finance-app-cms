@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "navbar_publics",
+  "info": {
+    "singularName": "navbar-public",
+    "pluralName": "navbar-publics",
+    "displayName": "Navbar Public"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Navbar": {
+      "type": "dynamiczone",
+      "components": [
+        "link.link"
+      ]
+    }
+  }
+}
