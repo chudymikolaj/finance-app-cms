@@ -933,6 +933,7 @@ export interface ApiNavbarPrivateNavbarPrivate extends Schema.SingleType {
     singularName: 'navbar-private';
     pluralName: 'navbar-privates';
     displayName: 'Navbar Private';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -943,7 +944,7 @@ export interface ApiNavbarPrivateNavbarPrivate extends Schema.SingleType {
     };
   };
   attributes: {
-    Navbar: Attribute.DynamicZone<['link.link']> &
+    Navbar: Attribute.DynamicZone<['navbar.navbar', 'navbar.main-links']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -979,12 +980,13 @@ export interface ApiNavbarPublicNavbarPublic extends Schema.SingleType {
     singularName: 'navbar-public';
     pluralName: 'navbar-publics';
     displayName: 'Navbar Public';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Navbar: Attribute.DynamicZone<['link.link']>;
+    navbar: Attribute.DynamicZone<['navbar.navbar', 'navbar.main-links']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

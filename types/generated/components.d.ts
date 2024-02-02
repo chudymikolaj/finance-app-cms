@@ -53,12 +53,40 @@ export interface LinkLink extends Schema.Component {
   };
 }
 
+export interface NavbarMainLinks extends Schema.Component {
+  collectionName: 'components_navbar_main_links';
+  info: {
+    displayName: 'Link';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    link: Attribute.String;
+    icon: Attribute.Media;
+  };
+}
+
+export interface NavbarNavbar extends Schema.Component {
+  collectionName: 'components_navbar_navbars';
+  info: {
+    displayName: 'Dropdown';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    link: Attribute.Component<'navbar.main-links'>;
+    Dropdown: Attribute.Component<'link.link', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'form.form': FormForm;
       'form.register-forum': FormRegisterForum;
       'link.link': LinkLink;
+      'navbar.main-links': NavbarMainLinks;
+      'navbar.navbar': NavbarNavbar;
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "navbar-private",
     "pluralName": "navbar-privates",
-    "displayName": "Navbar Private"
+    "displayName": "Navbar Private",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,7 +24,8 @@
       },
       "type": "dynamiczone",
       "components": [
-        "link.link"
+        "navbar.navbar",
+        "navbar.main-links"
       ]
     }
   }

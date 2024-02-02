@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_navbar_navbars",
+  "info": {
+    "displayName": "Dropdown",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "displayName": "Main Links",
+      "type": "component",
+      "repeatable": false,
+      "component": "navbar.main-links"
+    },
+    "Dropdown": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link.link"
+    }
+  }
+}
