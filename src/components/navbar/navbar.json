@@ -13,7 +13,7 @@
       "repeatable": false,
       "component": "navbar.main-links"
     },
-    "Dropdown": {
+    "dropdown": {
       "type": "component",
       "repeatable": true,
       "component": "link.link"

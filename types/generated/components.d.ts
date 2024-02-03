@@ -75,7 +75,7 @@ export interface NavbarNavbar extends Schema.Component {
   };
   attributes: {
     link: Attribute.Component<'navbar.main-links'>;
-    Dropdown: Attribute.Component<'link.link', true>;
+    dropdown: Attribute.Component<'link.link', true>;
   };
 }
 
