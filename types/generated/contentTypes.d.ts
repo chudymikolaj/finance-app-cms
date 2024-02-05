@@ -944,7 +944,7 @@ export interface ApiNavbarPrivateNavbarPrivate extends Schema.SingleType {
     };
   };
   attributes: {
-    Navbar: Attribute.DynamicZone<['navbar.navbar', 'navbar.main-links']> &
+    navbar: Attribute.DynamicZone<['navbar.navbar', 'navbar.main-links']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

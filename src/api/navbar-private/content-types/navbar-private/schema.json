@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "Navbar": {
+    "navbar": {
       "pluginOptions": {
         "i18n": {
           "localized": true
