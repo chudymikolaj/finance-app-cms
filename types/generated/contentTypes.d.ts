@@ -901,9 +901,9 @@ export interface ApiMonetaryIncomeMonetaryIncome extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required;
-    Value: Attribute.Float & Attribute.Required;
-    Date: Attribute.Date & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    value: Attribute.Float & Attribute.Required;
+    date: Attribute.Date & Attribute.Required;
     users_permissions_user: Attribute.Relation<
       'api::monetary-income.monetary-income',
       'manyToOne',

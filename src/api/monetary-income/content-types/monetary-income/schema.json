@@ -12,15 +12,15 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Value": {
+    "value": {
       "type": "float",
       "required": true
     },
-    "Date": {
+    "date": {
       "type": "date",
       "required": true
     },
