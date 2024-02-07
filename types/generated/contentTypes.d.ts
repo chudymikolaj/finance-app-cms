@@ -711,6 +711,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::monetary-income.monetary-income'
     >;
+    monetary_expenses: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::monetary-expense.monetary-expense'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -886,6 +891,46 @@ export interface ApiLoginPageLoginPage extends Schema.SingleType {
       'api::login-page.login-page'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiMonetaryExpenseMonetaryExpense
+  extends Schema.CollectionType {
+  collectionName: 'monetary_expenses';
+  info: {
+    singularName: 'monetary-expense';
+    pluralName: 'monetary-expenses';
+    displayName: 'Monetary expense';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    value: Attribute.Float;
+    date: Attribute.Date;
+    users_permissions_user: Attribute.Relation<
+      'api::monetary-expense.monetary-expense',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    isPaid: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::monetary-expense.monetary-expense',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::monetary-expense.monetary-expense',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1087,6 +1132,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::global.global': ApiGlobalGlobal;
       'api::login-page.login-page': ApiLoginPageLoginPage;
+      'api::monetary-expense.monetary-expense': ApiMonetaryExpenseMonetaryExpense;
       'api::monetary-income.monetary-income': ApiMonetaryIncomeMonetaryIncome;
       'api::navbar-private.navbar-private': ApiNavbarPrivateNavbarPrivate;
       'api::navbar-public.navbar-public': ApiNavbarPublicNavbarPublic;
