@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tab_assets",
+  "info": {
+    "singularName": "tab-asset",
+    "pluralName": "tab-assets",
+    "displayName": "Tab Asset"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "assets_tab": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::assets-tab.assets-tab",
+      "inversedBy": "tab_assets"
+    }
+  }
+}

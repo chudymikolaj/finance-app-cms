@@ -4,7 +4,8 @@
   "info": {
     "singularName": "assets-tab",
     "pluralName": "assets-tabs",
-    "displayName": "Assets tab"
+    "displayName": "Assets tab",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,12 @@
     },
     "color": {
       "type": "string"
+    },
+    "tab_assets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tab-asset.tab-asset",
+      "mappedBy": "assets_tab"
     }
   }
 }

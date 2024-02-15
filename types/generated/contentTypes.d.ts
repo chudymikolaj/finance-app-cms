@@ -783,6 +783,7 @@ export interface ApiAssetsTabAssetsTab extends Schema.CollectionType {
     singularName: 'assets-tab';
     pluralName: 'assets-tabs';
     displayName: 'Assets tab';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -792,6 +793,11 @@ export interface ApiAssetsTabAssetsTab extends Schema.CollectionType {
     value: Attribute.String;
     goal: Attribute.String;
     color: Attribute.String;
+    tab_assets: Attribute.Relation<
+      'api::assets-tab.assets-tab',
+      'oneToMany',
+      'api::tab-asset.tab-asset'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1145,6 +1151,42 @@ export interface ApiRegisterPageRegisterPage extends Schema.SingleType {
   };
 }
 
+export interface ApiTabAssetTabAsset extends Schema.CollectionType {
+  collectionName: 'tab_assets';
+  info: {
+    singularName: 'tab-asset';
+    pluralName: 'tab-assets';
+    displayName: 'Tab Asset';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    value: Attribute.String & Attribute.Required;
+    assets_tab: Attribute.Relation<
+      'api::tab-asset.tab-asset',
+      'manyToOne',
+      'api::assets-tab.assets-tab'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::tab-asset.tab-asset',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::tab-asset.tab-asset',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1171,6 +1213,7 @@ declare module '@strapi/types' {
       'api::navbar-private.navbar-private': ApiNavbarPrivateNavbarPrivate;
       'api::navbar-public.navbar-public': ApiNavbarPublicNavbarPublic;
       'api::register-page.register-page': ApiRegisterPageRegisterPage;
+      'api::tab-asset.tab-asset': ApiTabAssetTabAsset;
     }
   }
 }
