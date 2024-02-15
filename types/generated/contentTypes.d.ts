@@ -777,6 +777,39 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAssetsTabAssetsTab extends Schema.CollectionType {
+  collectionName: 'assets_tabs';
+  info: {
+    singularName: 'assets-tab';
+    pluralName: 'assets-tabs';
+    displayName: 'Assets tab';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    value: Attribute.String;
+    goal: Attribute.String;
+    color: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::assets-tab.assets-tab',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::assets-tab.assets-tab',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -1130,6 +1163,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::assets-tab.assets-tab': ApiAssetsTabAssetsTab;
       'api::global.global': ApiGlobalGlobal;
       'api::login-page.login-page': ApiLoginPageLoginPage;
       'api::monetary-expense.monetary-expense': ApiMonetaryExpenseMonetaryExpense;

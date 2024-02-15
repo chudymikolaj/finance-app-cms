@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assets_tabs",
+  "info": {
+    "singularName": "assets-tab",
+    "pluralName": "assets-tabs",
+    "displayName": "Assets tab"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "value": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    }
+  }
+}
