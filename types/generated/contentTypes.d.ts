@@ -790,9 +790,9 @@ export interface ApiAssetsTabAssetsTab extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    value: Attribute.String;
-    goal: Attribute.String;
-    color: Attribute.String;
+    value: Attribute.String & Attribute.Required;
+    goal: Attribute.String & Attribute.Required;
+    color: Attribute.String & Attribute.Required;
     tab_assets: Attribute.Relation<
       'api::assets-tab.assets-tab',
       'oneToMany',

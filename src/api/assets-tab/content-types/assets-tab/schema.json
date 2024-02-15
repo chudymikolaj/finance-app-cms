@@ -18,13 +18,16 @@
       "unique": false
     },
     "value": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "goal": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "color": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "tab_assets": {
       "type": "relation",
