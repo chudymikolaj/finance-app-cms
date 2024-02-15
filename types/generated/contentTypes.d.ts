@@ -716,6 +716,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::monetary-expense.monetary-expense'
     >;
+    assets_tabs: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::assets-tab.assets-tab'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -797,6 +802,11 @@ export interface ApiAssetsTabAssetsTab extends Schema.CollectionType {
       'api::assets-tab.assets-tab',
       'oneToMany',
       'api::tab-asset.tab-asset'
+    >;
+    users_permissions_user: Attribute.Relation<
+      'api::assets-tab.assets-tab',
+      'manyToOne',
+      'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

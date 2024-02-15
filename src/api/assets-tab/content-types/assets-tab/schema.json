@@ -34,6 +34,12 @@
       "relation": "oneToMany",
       "target": "api::tab-asset.tab-asset",
       "mappedBy": "assets_tab"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "assets_tabs"
     }
   }
 }

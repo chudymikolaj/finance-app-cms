@@ -76,6 +76,12 @@
       "relation": "oneToMany",
       "target": "api::monetary-expense.monetary-expense",
       "mappedBy": "users_permissions_user"
+    },
+    "assets_tabs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::assets-tab.assets-tab",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
