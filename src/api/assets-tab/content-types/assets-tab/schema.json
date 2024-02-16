@@ -17,14 +17,6 @@
       "required": true,
       "unique": false
     },
-    "value": {
-      "type": "string",
-      "required": true
-    },
-    "goal": {
-      "type": "string",
-      "required": true
-    },
     "color": {
       "type": "string",
       "required": true
@@ -40,6 +32,18 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "assets_tabs"
+    },
+    "id_asset": {
+      "type": "uid",
+      "required": true
+    },
+    "value": {
+      "type": "float",
+      "required": true
+    },
+    "goal": {
+      "type": "float",
+      "required": true
     }
   }
 }

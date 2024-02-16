@@ -4,7 +4,8 @@
   "info": {
     "singularName": "tab-asset",
     "pluralName": "tab-assets",
-    "displayName": "Tab Asset"
+    "displayName": "Tab Asset",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,15 +16,25 @@
       "type": "string",
       "required": true
     },
-    "value": {
-      "type": "string",
-      "required": true
-    },
     "assets_tab": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::assets-tab.assets-tab",
       "inversedBy": "tab_assets"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "tab_assets"
+    },
+    "id_asset_item": {
+      "type": "uid",
+      "required": true
+    },
+    "value": {
+      "type": "float",
+      "required": true
     }
   }
 }

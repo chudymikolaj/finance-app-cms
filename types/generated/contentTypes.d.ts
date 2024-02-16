@@ -721,6 +721,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::assets-tab.assets-tab'
     >;
+    tab_assets: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::tab-asset.tab-asset'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -795,8 +800,6 @@ export interface ApiAssetsTabAssetsTab extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    value: Attribute.String & Attribute.Required;
-    goal: Attribute.String & Attribute.Required;
     color: Attribute.String & Attribute.Required;
     tab_assets: Attribute.Relation<
       'api::assets-tab.assets-tab',
@@ -808,6 +811,9 @@ export interface ApiAssetsTabAssetsTab extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    id_asset: Attribute.UID & Attribute.Required;
+    value: Attribute.Float & Attribute.Required;
+    goal: Attribute.Float & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1167,18 +1173,25 @@ export interface ApiTabAssetTabAsset extends Schema.CollectionType {
     singularName: 'tab-asset';
     pluralName: 'tab-assets';
     displayName: 'Tab Asset';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    value: Attribute.String & Attribute.Required;
     assets_tab: Attribute.Relation<
       'api::tab-asset.tab-asset',
       'manyToOne',
       'api::assets-tab.assets-tab'
     >;
+    users_permissions_user: Attribute.Relation<
+      'api::tab-asset.tab-asset',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    id_asset_item: Attribute.UID & Attribute.Required;
+    value: Attribute.Float & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

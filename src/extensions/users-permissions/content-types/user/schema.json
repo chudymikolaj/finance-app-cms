@@ -82,6 +82,12 @@
       "relation": "oneToMany",
       "target": "api::assets-tab.assets-tab",
       "mappedBy": "users_permissions_user"
+    },
+    "tab_assets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tab-asset.tab-asset",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
