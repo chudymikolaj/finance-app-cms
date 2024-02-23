@@ -1,5 +1,24 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BudgetBudgetManagement extends Schema.Component {
+  collectionName: 'components_budget_budget_managements';
+  info: {
+    displayName: 'Budget Management';
+    icon: 'cog';
+    description: '';
+  };
+  attributes: {
+    ironReserve: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.DefaultTo<30>;
+    investments: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.DefaultTo<10>;
+    savings: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<10>;
+    rest: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<50>;
+  };
+}
+
 export interface FormForm extends Schema.Component {
   collectionName: 'components_form_forms';
   info: {
@@ -82,6 +101,7 @@ export interface NavbarNavbar extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'budget.budget-management': BudgetBudgetManagement;
       'form.form': FormForm;
       'form.register-forum': FormRegisterForum;
       'link.link': LinkLink;

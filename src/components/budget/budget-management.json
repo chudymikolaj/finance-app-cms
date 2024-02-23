@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_budget_budget_managements",
+  "info": {
+    "displayName": "Budget Management",
+    "icon": "cog",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ironReserve": {
+      "type": "decimal",
+      "required": true,
+      "default": 30
+    },
+    "investments": {
+      "type": "decimal",
+      "required": true,
+      "default": 10
+    },
+    "savings": {
+      "type": "decimal",
+      "required": true,
+      "default": 10
+    },
+    "rest": {
+      "type": "decimal",
+      "required": true,
+      "default": 50
+    }
+  }
+}
