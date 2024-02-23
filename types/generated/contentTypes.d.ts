@@ -726,6 +726,8 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::tab-asset.tab-asset'
     >;
+    budget_options: Attribute.Component<'budget.budget-management'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
