@@ -16,6 +16,14 @@ export interface BudgetBudgetManagement extends Schema.Component {
       Attribute.DefaultTo<10>;
     savings: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<10>;
     rest: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<50>;
+    nameIronReserve: Attribute.String & Attribute.Required;
+    nameInvestments: Attribute.String & Attribute.Required;
+    nameSavings: Attribute.String & Attribute.Required;
+    nameRest: Attribute.String & Attribute.Required;
+    colorIronReserve: Attribute.String & Attribute.Required;
+    colorInvestments: Attribute.String;
+    colorSavings: Attribute.String & Attribute.Required;
+    colorRest: Attribute.String & Attribute.Required;
   };
 }
 

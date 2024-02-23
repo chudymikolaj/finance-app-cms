@@ -26,6 +26,37 @@
       "type": "decimal",
       "required": true,
       "default": 50
+    },
+    "nameIronReserve": {
+      "type": "string",
+      "required": true
+    },
+    "nameInvestments": {
+      "type": "string",
+      "required": true
+    },
+    "nameSavings": {
+      "type": "string",
+      "required": true
+    },
+    "nameRest": {
+      "type": "string",
+      "required": true
+    },
+    "colorIronReserve": {
+      "type": "string",
+      "required": true
+    },
+    "colorInvestments": {
+      "type": "string"
+    },
+    "colorSavings": {
+      "type": "string",
+      "required": true
+    },
+    "colorRest": {
+      "type": "string",
+      "required": true
     }
   }
 }
