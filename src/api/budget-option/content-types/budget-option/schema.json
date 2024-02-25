@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "budget_options",
+  "info": {
+    "singularName": "budget-option",
+    "pluralName": "budget-options",
+    "displayName": "Budget option",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "share": {
+      "type": "decimal"
+    },
+    "color": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "budget_options"
+    }
+  }
+}

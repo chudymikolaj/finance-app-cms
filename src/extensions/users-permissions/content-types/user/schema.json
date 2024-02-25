@@ -88,6 +88,12 @@
       "relation": "oneToMany",
       "target": "api::tab-asset.tab-asset",
       "mappedBy": "users_permissions_user"
+    },
+    "budget_options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::budget-option.budget-option",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

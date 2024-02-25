@@ -726,6 +726,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::tab-asset.tab-asset'
     >;
+    budget_options: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::budget-option.budget-option'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -825,6 +830,44 @@ export interface ApiAssetsTabAssetsTab extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::assets-tab.assets-tab',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBudgetOptionBudgetOption extends Schema.CollectionType {
+  collectionName: 'budget_options';
+  info: {
+    singularName: 'budget-option';
+    pluralName: 'budget-options';
+    displayName: 'Budget option';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    share: Attribute.Decimal;
+    color: Attribute.String;
+    users_permissions_user: Attribute.Relation<
+      'api::budget-option.budget-option',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::budget-option.budget-option',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::budget-option.budget-option',
       'oneToOne',
       'admin::user'
     > &
@@ -1229,6 +1272,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::assets-tab.assets-tab': ApiAssetsTabAssetsTab;
+      'api::budget-option.budget-option': ApiBudgetOptionBudgetOption;
       'api::global.global': ApiGlobalGlobal;
       'api::login-page.login-page': ApiLoginPageLoginPage;
       'api::monetary-expense.monetary-expense': ApiMonetaryExpenseMonetaryExpense;
