@@ -8,26 +8,33 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "share": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "color": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "budget_options"
+    },
+    "assets_tab": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::assets-tab.assets-tab"
     }
   }
 }

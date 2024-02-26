@@ -846,20 +846,24 @@ export interface ApiBudgetOptionBudgetOption extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    title: Attribute.String & Attribute.Required & Attribute.Unique;
-    share: Attribute.Decimal;
-    color: Attribute.String;
+    title: Attribute.String & Attribute.Required;
+    share: Attribute.Decimal & Attribute.Required;
+    color: Attribute.String & Attribute.Required;
     users_permissions_user: Attribute.Relation<
       'api::budget-option.budget-option',
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    assets_tab: Attribute.Relation<
+      'api::budget-option.budget-option',
+      'oneToOne',
+      'api::assets-tab.assets-tab'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::budget-option.budget-option',
       'oneToOne',
