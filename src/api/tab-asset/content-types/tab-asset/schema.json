@@ -28,10 +28,6 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "tab_assets"
     },
-    "id_asset_item": {
-      "type": "uid",
-      "required": true
-    },
     "value": {
       "type": "float",
       "required": true

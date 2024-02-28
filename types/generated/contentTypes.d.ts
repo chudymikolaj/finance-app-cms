@@ -1237,7 +1237,6 @@ export interface ApiTabAssetTabAsset extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
-    id_asset_item: Attribute.UID & Attribute.Required;
     value: Attribute.Float & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
